@@ -1,0 +1,13 @@
+{% extends "two_factor/_base_focus.html" %}
+{% load i18n %}
+
+{% block content %}
+  <h1>{% block title %}{% trans "Enable Two-factor Authentication Again" %}{% endblock %}</h1>
+  <p>{% blocktrans trimmed %}You are about to enable two-factor authentication again, are you sure?{% endblocktrans %}</p>
+  <form method="post">
+    {% csrf_token %}
+    <table>{{ form.as_table }}</table>
+    <button class="btn btn-danger"
+            type="submit">{% trans "Continue" %}</button>
+  </form>
+{% endblock %}

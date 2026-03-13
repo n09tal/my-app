@@ -1,0 +1,20 @@
+
+{% if service_requested %}
+{% for service_requeste in service_requested %} 
+<p>Responses to your Care Request #{{QA}}<a href = "https://{{current_site}}/request/{{patient_request_id}}">{{ patient_request_id }} </a>:
+    {% for provider in service_requeste.interests.all %}
+        
+    <p> {{ provider }} is interested in providing {{ service_requeste.service.name }}. </p>      
+            
+
+    {% endfor %} 
+    <p> {{QA}}<a href = "https://{{current_site}}/request/{{patient_request_id}}"> Click here</a> to accept a provider or review this request.</p>  
+{% endfor %}
+{% else %}
+<p>About your Care Request # {{QA}}<a href = "https://{{current_site}}/request/{{patient_request_id}}">{{ patient_request_id }}</a>  :
+    There are no interested providers at this time.
+    {{QA}} <a href = "https://{{current_site}}/request/{{patient_request_id}}">Click here</a>  to review this request.</p>
+{% endif %}
+
+
+

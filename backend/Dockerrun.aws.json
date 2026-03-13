@@ -1,0 +1,11 @@
+{
+	"AWSEBDockerrunVersion": "1",
+	"Image": {
+		"Name": "himanshureborn/duett:duett_django_qa",
+		"Update": "true"
+	},
+	"Ports": [{
+		"ContainerPort": "8000"
+	}],
+	"Logging": "/var/log/nginx"
+}

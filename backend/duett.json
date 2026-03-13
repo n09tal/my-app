@@ -1,0 +1,12 @@
+{
+    "project_name": "Duett Django",
+    "repo_name": "duett_app_backend",
+    "project_slug": "duett_api",
+    "python_version": "3.7.1",
+    "project_version": "0.1.0",
+    "project_description": "",
+    "database_name": "duett",
+    "database_user": "duett_admin",
+    "jira_link": "",
+    "confluence_link": ""
+}

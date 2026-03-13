@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Template</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #f7f7f7;
+			font-family:'Lato',sans-serif;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin: 0 auto;
+		}
+
+		.container {
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		.header {
+			background-color: #ffffff;
+			text-align: center;
+			padding: 20px 0;
+		}
+
+		.header img {
+			max-width: 40%;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.bar {
+			background-color: #87c6c8;
+			height: 5px;
+		}
+
+		.content {
+			background-color: #ffffff;
+			padding: 20px;
+    		font-size: 18px;
+			line-height: 1.5;
+		}
+
+		.button {
+		  background-color: #87c6c8;
+		  border: none;
+		  color: white !important;
+		  padding: 15px 40px;
+		  margin-top: 10px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		}
+
+		.footer {
+			background-color: #87c6c8;
+			color: white;
+			padding: 50px;
+			line-height: 1.5;
+		}
+
+		.box {
+			display: inline-block;
+		}
+
+		.footer-left {
+		  display: inline-block;
+		  width: 50%;
+		}
+
+		.footer-right {
+ 		  display: inline-block;
+		  width: 40%;
+		}
+
+		.p-t {
+			margin-top: 0px;
+			padding-top: 0px;
+			font-size: 14px;
+		}
+
+		.p-b {
+			margin-bottom: 0px;
+			padding-bottom: 0px;
+			font-size: 16px;
+		}
+
+		a {
+			text-decoration: underline;
+			color: black !important;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.container {
+				width: 100% !important;
+			}
+
+			.header img {
+				width: 40% !important;
+			}
+		}
+	</style>
+</head>
+<body>
+	<table class="container" cellpadding="0" cellspacing="0">
+		<tr>
+			<td>
+				<table class="header" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td style="padding: 20px 0px;">
+							<img src="https://duett-assets.s3.us-east-2.amazonaws.com/Duett_FullColor_logo.png" alt="Duett logo">
+						</td>
+					</tr>
+				</table>
+				<table class="bar" cellpadding="0" cellspacing="0" width="90%">
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				<table class="content" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td style="padding:40px 60px 30px;">
+							<div>
+								<p>Welcome to Duett!</p>
+								<p>
+									<span>A new provider {{ sender }} has registered and requires review.</span>
+								</p>
+							</div>
+							<!-- Iterate over all_documents to display each document link -->
+							{% if all_documents %}
+								<ul>
+									{% for document in all_documents %}
+										<li>
+											<a href="{{ document.link }}">{{ document.file_name }}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							{% else %}
+								<p>No documents found.</p>
+							{% endif %}
+							<a href="{{ provider_profile_admin_url }}" class="button" >Provider URL (Django)</a>
+						</td>
+					</tr>
+				</table>
+				<table class="footer" cellpadding="0" cellspacing="0" width="100%">
+					<tr>
+						<td>
+							<div style="padding:20px 40px;">
+								<span class="footer-left">
+									<p class="p-b">Have question?</p>
+									<p class="p-t">Email us at <a href="mailto:support@duett.io?subject=I have a question">support@duett.io</a></p>
+								</span>
+								<span class="footer-right">
+									<div>
+										<p class="p-b">Need help?</p>
+										<p class="p-t">Check out our <a href="https://www.duett.io/faqs-3">FAQs</a></p>
+									</div>
+								</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
+

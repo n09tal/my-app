@@ -1,0 +1,21 @@
+{% for pr in patient_requests %}
+  {% if not forloop.first %}<hr/>{% endif %}
+  <p>
+    About your Care Request <a href="https://{{current_site}}/request/{{pr.id}}">#{{ pr.id }}</a>:
+  </p>
+  {% for sr in pr.service_requests %}
+    {% if sr.status != 2 and sr.match %}
+      <p>{{ sr.match }} has been accepted as provider for {{ sr.service.name }}.</p>
+    {% elif sr.status == 2 and sr.interests.all %}
+      {% for provider in sr.interests.all %}
+        <p>{{ provider }} is interested in providing {{ sr.service.name }}.</p>
+      {% endfor %}
+    {% elif sr.status != 2 %}
+      <p>There are no providers interested in providing {{ sr.service.name }} at this time.</p>
+    {% endif %}
+  {% endfor %}
+  <p>
+    <a href="https://{{current_site}}/request/{{pr.id}}"> Click
+    here</a> to accept a provider or review this request.
+  </p>
+{% endfor %}

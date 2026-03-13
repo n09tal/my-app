@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Documents</title>
+</head>
+
+    {% block content %}
+      <h1>Documents for {{ provider_profile.name }}</h1>
+      <ul>
+        {% for document in documents %}
+          <li>{{ document.file_name }} - <a href="{{ document.link }}" target="_blank">Download</a></li>
+        {% endfor %}
+      </ul>
+      <a href="{% url 'admin:users_providerprofile_changelist' %}">Back to Providers</a>
+    {% endblock %}
+
+<body>
+
+</body>
+</html>
