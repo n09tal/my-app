@@ -1,18 +1,17 @@
 # Initial State
 
-This repository was re-initialized as a clean standalone project at `c:/myProject`.
+This repository is a clean standalone project initialized at `c:/myProject`.
 
-## Source baseline
-- Frontend code baseline copied from `c:/Duett-clone/care4me` into `frontend/`
-- Backend code baseline copied from `c:/Duett-Django/duett-django` into `backend/`
-- Local functional fixes retained in this baseline:
+## Baseline scope
+- Includes both `frontend/` and `backend/` application code.
+- Includes local auth flow fixes:
   - Signup page integrated with backend registration endpoint
-  - Forgot-password route and flow added in frontend
-  - Local backend email backend configured for console output (no real email sending)
+  - Forgot-password route and flow in frontend
+  - Local backend email backend set to console output for development
 
 ## Data policy
-- No real backend data was copied.
-- Runtime data artifacts were excluded (for example `db.sqlite3`, `media/`, `backups/`).
+- No real backend data is tracked in this repository.
+- Runtime data artifacts are excluded (for example `db.sqlite3`, `media/`, `backups/`).
 
 ## Validation snapshot
 - Frontend production build succeeded.

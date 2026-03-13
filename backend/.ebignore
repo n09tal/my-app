@@ -173,7 +173,6 @@ bower_components
 !.elasticbeanstalk/*.global.yml
 
 settings/development.py
-bitbucket-pipelines.yml
 Gruntfile.js
 README.md
 package.json

@@ -24,10 +24,10 @@ docs for more detail on building and pushing.
 
 ### IMPORTANT COMMANDS:
 
-Build the docker file and image for the container
+Build the Docker image for the container
 
-docker build -t care4me .
+docker build -t my-app-frontend .
 
 Run the application on localhost 3000
 
-docker run -p 3000:3000 care4me
+docker run -p 3000:3000 my-app-frontend
